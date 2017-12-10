@@ -69,9 +69,19 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'joshdick/onedark.vim'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+"""""""""""""""""""""   ONEDARK
+" One Darkを有効にするために必要
+let g:onedark_termcolors=16
+
+" カラースキーマを宣言する
+colorscheme onedark
 """"""""""""""""""""""  NERDTree"
 let NERDTreeShowHidden = 1
 
@@ -141,9 +151,15 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
+""""""""""""""""""""""""""  vim airline
+let g:airline_powerline_fonts = 1
+" タブバーのカスタマイズを有効にする
+let g:airline#extensions#tabline#enabled = 1
 
-
-" http://inari.hatenablog.com/entry/2014/05/05/231307
+" タブバーの右領域を非表示にする
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_close_button = 0
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
 """"""""""""""""""""""""""""""
