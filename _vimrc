@@ -1,5 +1,4 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,6 +15,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-rails'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-endwise'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-scripts/AnsiEsc.vim'
+Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,3 +127,20 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+""""""""""""""""""""""""""""""
+" 全角スペースの表示
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+""""""""""""""""""""""""""""""
