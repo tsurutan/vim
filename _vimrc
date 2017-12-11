@@ -23,6 +23,7 @@ set laststatus=2
 set wildmode=list:longest
 syntax on
 
+nmap <CR> i<CR><ESC>
 nnoremap j gj
 nnoremap k gk
 " Tab系
@@ -40,7 +41,34 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set encoding=utf-8
 scriptencoding utf-8
+""""""""""""""""""""""""""""""""""""""""""""""""""""tab 
 
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap sa :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -72,7 +100,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
-
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -88,10 +116,15 @@ let NERDTreeShowHidden = 1
 " ツリーと編集領域を移動する
 nmap <Leader><Tab> <C-w>w
 map <C-n> :NERDTreeToggle<CR>
+map <s-s> :split<CR>
 " ファイルが指定されていなければNERD treeを有効にする
 if argc() == 0
   let g:nerdtree_tabs_open_on_console_startup = 1
 end
+""""""""""""""""" Syntastic 設定
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 
 """"""""""""""""" Neocomplete neosnippetの設定
 " Vim起動時にneocompleteを有効にする
@@ -108,7 +141,6 @@ let g:neocomplete#auto_completion_start_length = 1
 inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
 
 " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定・・・・・・②
-imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
 " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
@@ -176,7 +208,6 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 """"""""""""""""""""""""""""""
-
 """"""""""""""""""""""""""""" Clipboard paste
 if &term =~ "xterm"
     let &t_SI .= "\e[?2004h"
