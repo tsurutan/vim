@@ -10,7 +10,7 @@ set noswapfile
 set autoread
 set hidden
 set showcmd
-
+set clipboard+=unnamed
 """""""""""""""""  見た目系
 set number
 set cursorline
@@ -122,10 +122,9 @@ if argc() == 0
   let g:nerdtree_tabs_open_on_console_startup = 1
 end
 """"""""""""""""" Syntastic 設定
-let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['ruby'] }
+let g:syntastic_mode_map = { 'mode': 'passive' }
+noremap ,c :SyntasticCheck<CR>
 let g:syntastic_ruby_checkers = ['rubocop']
-
 """"""""""""""""" Neocomplete neosnippetの設定
 " Vim起動時にneocompleteを有効にする
 let g:neocomplete#enable_at_startup = 1
