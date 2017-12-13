@@ -102,6 +102,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
+Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
