@@ -24,6 +24,7 @@ set wildmode=list:longest
 syntax on
 
 nmap <CR> i<CR><ESC>
+map ff :
 nnoremap j gj
 nnoremap k gk
 " Tab系
@@ -103,6 +104,8 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -170,6 +173,8 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 "     " Overwrite settings.
 " endfunction
  
+" vim-jsx
+let g:jsx_ext_required = 1
 " 様々なショートカット
 call unite#custom#substitute('file', '\$\w\+', '\=eval(submatch(0))', 200)
 call unite#custom#substitute('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/"', 2)
