@@ -106,6 +106,7 @@ Plugin 'rking/ag.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'tomasr/molokai'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -113,8 +114,9 @@ filetype plugin indent on    " required
 " One Darkを有効にするために必要
 let g:onedark_termcolors=16
 
+
 " カラースキーマを宣言する
-colorscheme onedark
+colorscheme molokai
 """"""""""""""""""""""  NERDTree"
 let NERDTreeShowHidden = 1
 
