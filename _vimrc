@@ -10,6 +10,7 @@ set noswapfile
 set autoread
 set hidden
 set showcmd
+set tags+=~/.tags
 set clipboard+=unnamed
 """""""""""""""""  見た目系
 set number
@@ -107,6 +108,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'tomasr/molokai'
+Plugin 'szw/vim-tags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -114,6 +116,8 @@ filetype plugin indent on    " required
 " One Darkを有効にするために必要
 let g:onedark_termcolors=16
 
+" vim-tags
+au BufNewFile,BufRead *.php let g:vim_tags_project_tags_command = "ctags --languages=php -f ~/php.tags `pwd` 2>/dev/null &"
 
 " カラースキーマを宣言する
 colorscheme molokai
