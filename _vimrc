@@ -1,3 +1,4 @@
+set shell=/bin/bash
 """"""""""""""""""""""""""""""" Set
 set fileencoding=utf-8 " 保存時の文字コード
 set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
@@ -12,6 +13,9 @@ set hidden
 set showcmd
 set tags+=~/.tags
 set clipboard+=unnamed
+set foldmethod=indent
+set foldlevel=2
+set foldcolumn=3
 """""""""""""""""  見た目系
 set number
 set cursorline
