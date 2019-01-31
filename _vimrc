@@ -113,6 +113,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'tomasr/molokai'
 Plugin 'szw/vim-tags'
+Plugin 'etdev/vim-hexcolor'
+Plugin 'posva/vim-vue'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
