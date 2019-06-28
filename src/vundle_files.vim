@@ -38,12 +38,13 @@ Plugin 'rking/ag.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'tomasr/molokai'
 Plugin 'szw/vim-tags'
 Plugin 'etdev/vim-hexcolor'
 Plugin 'posva/vim-vue'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'jacoborus/tender.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
