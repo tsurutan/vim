@@ -13,7 +13,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'git@github.com:Shougo/unite.vim.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-rails'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -30,8 +29,6 @@ endif
 Plugin 'Shougo/neosnippet'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Shougo/neosnippet-snippets'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'rking/ag.vim'
@@ -45,7 +42,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'jacoborus/tender.vim'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'dart-lang/dart-vim-plugin'
+" Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
