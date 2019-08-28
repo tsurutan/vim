@@ -24,8 +24,9 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Theme
-syntax enable
+" syntax enable
 colorscheme tender
+syntax off
 
 " One Darkを有効にするために必要
 let g:onedark_termcolors=16

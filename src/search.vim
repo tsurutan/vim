@@ -1,5 +1,5 @@
 " 検索系
-set ignorecase
+set noignorecase
 set smartcase
 set incsearch
 set wrapscan
